@@ -1,4 +1,4 @@
-CREATE DATABASE examenes
+CREATE DATABASE examenes-msv-reactivo
     WITH
     OWNER = postgres
     ENCODING = 'UTF8'

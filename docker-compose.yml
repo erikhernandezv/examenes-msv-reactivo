@@ -5,22 +5,22 @@ services:
     image: 'postgres:13.1-alpine'
     container_name: db
     environment:
-      - POSTGRES_USER=librero-mcs-one
-      - POSTGRES_PASSWORD=librero12345678
-      - POSTGRES_DB=librero-mcs-one
+      - POSTGRES_USER=examenes-msv-reactivo
+      - POSTGRES_PASSWORD=examenes12345678
+      - POSTGRES_DB=examenes-msv-reactivo
     ports:
       - "5432:5432"
   app:
-    image: 'librero-mcs-one:latest'
+    image: 'examenes-msv-reactivo:latest'
     build:
       context: .
     container_name: app
     depends_on:
       - db
     environment:
-      - SPRING_DATASOURCE_URL=jdbc:postgresql://db:5432/librero-mcs-one
-      - SPRING_DATASOURCE_USERNAME=librero-mcs-one
-      - SPRING_DATASOURCE_PASSWORD=librero12345678
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://db:5432/examenes-msv-reactivo
+      - SPRING_DATASOURCE_USERNAME=examenes-msv-reactivo
+      - SPRING_DATASOURCE_PASSWORD=examenes12345678
       - SPRING_JPA_HIBERNATE_DDL_AUTO=update
     ports:
       - "6090:6090"
